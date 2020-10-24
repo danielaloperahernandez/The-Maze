@@ -15,7 +15,7 @@ void setup_game(void)
 	player.x = SCREEN_WIDTH / 2;
 	player.y = SCREEN_HEIGHT / 2;
 	player.width = 1;
-	player.height = 50;
+	player.height = 30;
 	player.walkDirection = 0;
 	player.walkSpeed = 100;
 	player.turnDirection = 0;
