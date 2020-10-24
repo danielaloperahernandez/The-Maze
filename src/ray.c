@@ -15,20 +15,16 @@ static int horzWallContent, vertWallContent;
 
 void horzIntersection(float rayAngle)
 {
-	/* HORIZONTAL RAY-GRID INTERSECTION CODE */
 	float nextHorzTouchX, nextHorzTouchY, xintercept, yintercept, xstep, ystep;
 
 	foundHorzWallHit = false;
 	horzWallHitX = horzWallHitY = horzWallContent = 0;
 
-	/* Find the y-coordinate of the closest horizontal grid intersection */
 	yintercept = floor(player.y / TILE_SIZE) * TILE_SIZE;
 	yintercept += isRayFacingDown(rayAngle) ? TILE_SIZE : 0;
 
-	/* Find the x-coordinate of the closest horizontal grid intersection */
 	xintercept = player.x + (yintercept - player.y) / tan(rayAngle);
 
-	/* Calculate the increment xstep and ystep */
 	ystep = TILE_SIZE;
 	ystep *= isRayFacingUp(rayAngle) ? -1 : 1;
 	xstep = TILE_SIZE / tan(rayAngle);
@@ -37,7 +33,6 @@ void horzIntersection(float rayAngle)
 	nextHorzTouchX = xintercept;
 	nextHorzTouchY = yintercept;
 
-	/* Increment xstep and ystep until we find a wall */
 	while (isInsideMap(nextHorzTouchX, nextHorzTouchY))
 	{
 		float xToCheck = nextHorzTouchX;

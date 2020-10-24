@@ -1,12 +1,12 @@
-#ifndef CONSTANTS_H
-#define CONSTANTS_H
+#ifndef HEADER_H
+#define HEADER_H
 
+#include <SDL2/SDL.h>
 #include <stdint.h>
 #include <math.h>
-#include <stdbool.h>
-#include <SDL2/SDL.h>
 #include <limits.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include "upng.h"
 
 
@@ -17,16 +17,16 @@
 
 #define TILE_SIZE 64
 
-#define MINIMAP_SCALE_FACTOR 0.2
+#define MINIMAP_SCALE_FACTOR 0.25
 
-#define WINDOW_WIDTH 1280
-#define WINDOW_HEIGHT 800
+#define SCREEN_WIDTH (MAP_NUM_COLS * TILE_SIZE)
+#define SCREEN_HEIGHT (MAP_NUM_ROWS * TILE_SIZE)
 
 #define FOV_ANGLE (60 * (PI / 180))
 
-#define NUM_RAYS WINDOW_WIDTH
+#define NUM_RAYS SCREEN_WIDTH
 
-#define PROJ_PLANE ((WINDOW_WIDTH / 2) / tan(FOV_ANGLE / 2))
+#define PROJ_PLANE ((SCREEN_WIDTH / 2) / tan(FOV_ANGLE / 2))
 
 #define FPS 30
 #define FRAME_TIME_LENGTH (1000 / FPS)
@@ -39,15 +39,16 @@
 typedef uint32_t color_t;
 
 /* Process Input */
-void processInput(void);
-extern bool isGameRunning;
+void handleInput(void);
+extern bool GameRunning;
 
 /* Functions-variables-structs for draw */
 
 bool initializeWindow(void);
 void destroyWindow(void);
 void clearColorBuffer(color_t color);
-void renderer(void);
+void render_game(void);
+void renderColorBuffer(void);
 void drawPixel(int x, int y, color_t color);
 void drawRect(int x, int y, int width, int height, color_t color);
 void drawLine(int x0, int y0, int x1, int y1, color_t color);
@@ -79,8 +80,8 @@ typedef struct player_s
 	float y;
 	float width;
 	float height;
-	int turnDirection; /* -1 for left, +1 for right */
-	int walkDirection; /* -1 for back, +1 for front */
+	int turnDirection;
+	int walkDirection;
 	float rotationAngle;
 	float walkSpeed;
 	float turnSpeed;
@@ -88,7 +89,7 @@ typedef struct player_s
 
 extern player_t player;
 
-void movePlayer(float deltaTime);
+void movePlayer(float DeltaTime);
 void renderPlayer(void);
 
 /* Functions-variables-structs for ray */
@@ -147,11 +148,11 @@ typedef struct texture_s
 
 texture_t wallTextures[NUM_TEXTURES];
 
-void loadWallTextures(void);
+void WallTexturesready(void);
 void freeWallTextures(void);
 
 /* Functions-variables-structs for walls */
 
-void renderWallProjection(void);
+void renderWall(void);
 
-#endif /* constants */
+#endif /*HEADER_H*/
