@@ -1,12 +1,28 @@
-## Welcome to GitHub Pages
+# The Maze
 
-You can use the [editor on GitHub](https://github.com/danielaloperahernandez/The-Maze/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+The Maze is a 3D Maze game that uses ray casting to render a 2D map into a 3D navigable world!
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The Maze was written was written in C ussing SDL2 library. Deveploment was performed using Ubuntu 14.04 LTS - gcc (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4
 
-### Markdown
+### About SDL2
+Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. It is used by video playback software, emulators, and popular games including Valve’s award winning catalog and many Humble Bundle games.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Instalation
+$ git clone https://github.com/danielaloperahernandez/The-Maze.git
+
+## Usage
+* Execute ./maze or type make run
+* Use up and down arrow keys to move forward and backward (keys w and s serve the same function)
+* Use right and left arrow keys to turn the camera arround (keys d and a serve the same function)
+
+## Compilation
+$ gcc -Wall -Werror -Wextra -pedantic ./src/*.c -lm -o maze `sdl2-config --cflags` `sdl2-config --libs`;
+
+## Flowchart
+![The Maze Flow Chart](https://i.imgur.com/t0MxNni.png)
+
+## Demo
+![The Maze Demo](https://www.dropbox.com/h?preview=xnmyq-5ydxh.mp4)
 
 ```markdown
 Syntax highlighted code block
