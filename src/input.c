@@ -1,11 +1,11 @@
-#include "header.h"
+#include "../headers/header.h"
 
 /**
- * processInput - process input from thw keyboard
+ * handleInput - process input from thw keyboard
  *
 */
 
-void processInput(void)
+void handleInput(void)
 {
 	SDL_Event event;
 
@@ -15,13 +15,13 @@ void processInput(void)
 	{
 		case SDL_QUIT:
 		{
-			isGameRunning = false;
+			GameRunning = false;
 			break;
 		}
 		case SDL_KEYDOWN:
 		{
 			if (event.key.keysym.sym == SDLK_ESCAPE)
-				isGameRunning = false;
+				GameRunning = false;
 			if (event.key.keysym.sym == SDLK_UP)
 				player.walkDirection = +1;
 			if (event.key.keysym.sym == SDLK_DOWN)
@@ -30,6 +30,14 @@ void processInput(void)
 				player.turnDirection = +1;
 			if (event.key.keysym.sym == SDLK_LEFT)
 				player.turnDirection = -1;
+			if (event.key.keysym.sym == SDLK_w)
+				player.walkDirection = +1;
+			if (event.key.keysym.sym == SDLK_s)
+				player.walkDirection = -1;
+			if (event.key.keysym.sym == SDLK_a)
+				player.turnDirection = -1;
+			if (event.key.keysym.sym == SDLK_d)
+				player.turnDirection = +1;
 			break;
 		}
 		case SDL_KEYUP:
@@ -41,6 +49,14 @@ void processInput(void)
 			if (event.key.keysym.sym == SDLK_RIGHT)
 				player.turnDirection = 0;
 			if (event.key.keysym.sym == SDLK_LEFT)
+				player.turnDirection = 0;
+			if (event.key.keysym.sym == SDLK_w)
+				player.walkDirection = 0;
+			if (event.key.keysym.sym == SDLK_s)
+				player.walkDirection = 0;
+			if (event.key.keysym.sym == SDLK_a)
+				player.turnDirection = 0;
+			if (event.key.keysym.sym == SDLK_d)
 				player.turnDirection = 0;
 			break;
 		}

@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../headers/header.h"
 
 static const char *textureFileNames[NUM_TEXTURES] = {
 	"./images/redbrick.png",
@@ -12,10 +12,10 @@ static const char *textureFileNames[NUM_TEXTURES] = {
 };
 
 /**
- * loadWallTextures - load textures in the respective position
+ * WallTexturesready - load textures in the respective position
  *
 */
-void loadWallTextures(void)
+void WallTexturesready(void)
 {
 	int i;
 

@@ -29,7 +29,7 @@
 #include <string.h>
 #include <limits.h>
 
-#include "upng.h"
+#include "../headers/upng.h"
 
 #define MAKE_BYTE(b) ((b) & 0xFF)
 #define MAKE_DWORD(a,b,c,d) ((MAKE_BYTE(a) << 24) | (MAKE_BYTE(b) << 16) | (MAKE_BYTE(c) << 8) | MAKE_BYTE(d))

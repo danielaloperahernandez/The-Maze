@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../headers/header.h"
 
 static SDL_Renderer *renderer;
 static color_t *colorBuffer;
@@ -44,11 +44,11 @@ bool initializeWindow(void)
 	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
 
 	/* allocate the total amount of bytes in memory to hold our colorbuffer */
-	colorBuffer = malloc(sizeof(color_t) * WINDOW_WIDTH * WINDOW_HEIGHT);
+	colorBuffer = malloc(sizeof(color_t) * SCREEN_WIDTH * SCREEN_HEIGHT);
 
 	/* create an SDL_Texture to display the colorbuffer */
 	colorBufferTexture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA32,
-		SDL_TEXTUREACCESS_STREAMING, WINDOW_WIDTH, WINDOW_HEIGHT);
+		SDL_TEXTUREACCESS_STREAMING, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 	return (true);
 }
@@ -77,7 +77,7 @@ void clearColorBuffer(color_t color)
 {
 	int i;
 
-	for (i = 0; i < WINDOW_WIDTH * WINDOW_HEIGHT; i++)
+	for (i = 0; i < SCREEN_WIDTH * SCREEN_HEIGHT; i++)
 		colorBuffer[i] = color;
 }
 
@@ -92,7 +92,7 @@ void renderColorBuffer(void)
 		colorBufferTexture,
 		NULL,
 		colorBuffer,
-		(int)(WINDOW_WIDTH * sizeof(color_t))
+		(int)(SCREEN_WIDTH * sizeof(color_t))
 	);
 	SDL_RenderCopy(renderer, colorBufferTexture, NULL, NULL);
 	SDL_RenderPresent(renderer);
@@ -107,6 +107,6 @@ void renderColorBuffer(void)
 
 void drawPixel(int x, int y, color_t color)
 {
-	colorBuffer[(WINDOW_WIDTH * y) + x] = color;
+	colorBuffer[(SCREEN_WIDTH * y) + x] = color;
 }
 
