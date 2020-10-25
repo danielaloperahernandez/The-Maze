@@ -8,7 +8,9 @@ The Maze was written was written in C ussing SDL2 library. Deveploment was perfo
 Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. It is used by video playback software, emulators, and popular games including Valve’s award winning catalog and many Humble Bundle games.
 
 ## Instalation
+```sh
 $ git clone https://github.com/danielaloperahernandez/The-Maze.git
+```
 
 ## Usage
 * Execute ./maze or type make run
@@ -16,39 +18,19 @@ $ git clone https://github.com/danielaloperahernandez/The-Maze.git
 * Use right and left arrow keys to turn the camera arround (keys d and a serve the same function)
 
 ## Compilation
+```sh
 $ gcc -Wall -Werror -Wextra -pedantic ./src/*.c -lm -o maze `sdl2-config --cflags` `sdl2-config --libs`;
+```
+## Features
+* The camera is rotated when the left and right keyboard arrows are pressed.
+* Player can move forward and backward
+* The collisions are under control, the player cannot advance when hitting a wall.
+* Walls, ceiling and floors were projected
+* The NORTH and SOUTH facing walls have a different intensity/color than the EAST and WEST facing walls.
 
 ## Flowchart
 ![The Maze Flow Chart](https://i.imgur.com/t0MxNni.png)
 
 ## Demo
+[![The Maze Demo](https://i.imgur.com/5Ss7s1S.png)](https://www.youtube.com/embed/6T2N8gNUTQ8)
 
-[![The Maze Demo](https://i.imgur.com/5Ss7s1S.png)]("https://www.youtube.com/embed/6T2N8gNUTQ8)
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/danielaloperahernandez/The-Maze/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
