@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../headers/header.h"
 
 bool GameRunning = false;
 int TicksLastFrame;

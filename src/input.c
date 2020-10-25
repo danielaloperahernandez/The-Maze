@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../headers/header.h"
 
 /**
  * handleInput - process input from thw keyboard
