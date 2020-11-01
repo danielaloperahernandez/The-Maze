@@ -125,10 +125,6 @@ so this will automatically change this as well
     transform: translate(-50%, -50%);
 }
 
-.video_zone > video {
-    height: 720;
-    width: 1280;
-}
 
 /***********************************************************************
  *  Body card grid
