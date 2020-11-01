@@ -127,8 +127,8 @@ so this will automatically change this as well
 
 video {
     position:relative;
-    width: 854 px;
-    height: 480 px;
+    height:100%;
+    width:100%;
 }
 
 
