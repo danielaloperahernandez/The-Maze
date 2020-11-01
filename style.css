@@ -125,6 +125,12 @@ so this will automatically change this as well
     transform: translate(-50%, -50%);
 }
 
+video {
+    position:relative;
+    height:100%;
+    width:100%;
+}
+
 
 /***********************************************************************
  *  Body card grid
