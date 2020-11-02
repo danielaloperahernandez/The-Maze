@@ -117,7 +117,7 @@ void renderWall(void)
 		texture_width = wallTextures[texNum].width;
 		texture_height = wallTextures[texNum].height;
 		renderFloor(wallBottomPixel, &texelColor, x);
-		renderCeil(wallBottomPixel, &texelColor, x);
+		renderCeil(wallTopPixel, &texelColor, x);
 
 		if (rays[x].wasHitVertical)
 			textureOffsetX = (int)rays[x].wallHitY % TILE_SIZE;
